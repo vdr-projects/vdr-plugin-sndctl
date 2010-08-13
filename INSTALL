@@ -1,0 +1,33 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Thomas Hildebrandt <toxym@web.de>
+Further development:         Rainer Blicke <rblickle@gmx.de>
+Project's homepage:          none
+Latest version available at: http://www.box.net/shared/qhu44kgcv4
+
+See the file COPYING for license information.
+
+---------------------------------------------------------------------------
+Sound control plugin - 'sndctl'
+---------------------------------------------------------------------------
+
+ Installation
+-------------------------------
+Handle like any other plugin for VDR. (All following paths may be different
+for your system.)
+
+installation example:
+
+* install the alsa header files
+  for debian use: apt-get install libasound2-dev
+* untar to the VDR plugins directory
+  example:  cd /usr/src/vdr/VDR/PLUGINS/src
+            tar -xzf /path/to/vdr-sndctl-0.1.2.tgz
+* make a symlink
+  example:  ln -sf sndctl-0.1.2 /usr/src/vdr/VDR/PLUGINS/src/sndctl
+* do a 'make' from the VDR directory
+  example:  cd /usr/src/vdr/VDR
+            make plugins
+* copy the library to the appropriate directory (or let it 'make' do)
+  example:  make install-plugins
+* be sure, your VDR is called with argument '-P sndctl'

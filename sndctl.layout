@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="run" />
+	<File name="alsa.c" open="0" top="0" tabpos="0">
+		<Cursor position="1620" topLine="32" />
+	</File>
+	<File name="defaults.h" open="0" top="0" tabpos="0">
+		<Cursor position="80" topLine="0" />
+	</File>
+	<File name="mainmenu.c" open="0" top="0" tabpos="0">
+		<Cursor position="1728" topLine="68" />
+	</File>
+	<File name="menuitems.c" open="0" top="0" tabpos="0">
+		<Cursor position="2332" topLine="86" />
+	</File>
+	<File name="mixer.c" open="0" top="0" tabpos="0">
+		<Cursor position="647" topLine="15" />
+	</File>
+	<File name="mixer.h" open="0" top="0" tabpos="0">
+		<Cursor position="860" topLine="10" />
+	</File>
+	<File name="setupmenu.c" open="0" top="0" tabpos="0">
+		<Cursor position="3283" topLine="48" />
+	</File>
+	<File name="sndctl.c" open="0" top="0" tabpos="0">
+		<Cursor position="1476" topLine="42" />
+	</File>
+	<File name="sndctl.h" open="0" top="0" tabpos="0">
+		<Cursor position="592" topLine="16" />
+	</File>
+	<File name="soundman.c" open="0" top="0" tabpos="1">
+		<Cursor position="1000" topLine="19" />
+	</File>
+	<File name="soundman.h" open="0" top="0" tabpos="0">
+		<Cursor position="722" topLine="20" />
+	</File>
+	<File name="soundset.c" open="0" top="0" tabpos="0">
+		<Cursor position="1692" topLine="45" />
+	</File>
+	<File name="soundset.h" open="0" top="0" tabpos="0">
+		<Cursor position="697" topLine="11" />
+	</File>
+</CodeBlocks_layout_file>

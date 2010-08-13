@@ -1,0 +1,223 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Thomas Hildebrandt <toxym@web.de>
+Weiterentwicklung:           Rainer Blicke <rblickle@gmx.de>
+Project's homepage:          none
+Latest version available at: http://www.box.net/shared/qhu44kgcv4
+
+See the file COPYING for license information.
+
+---------------------------------------------------------------------------
+Sound control plugin - 'sndctl'
+---------------------------------------------------------------------------
+
+ MOTIVATION
+===============================
+Dieses Plugin wurde inspiriert und neuentwickelt aus dem AVolCtl-Plugin von
+Martin Prochnow (vielen Dank dafuer).
+Es steuert die Lautstaerke verschiedener Regler der Soundkarte in
+Abhaengigkeit von der Lautstaerkeregelung des VDR.
+
+So weit so gut, fuer diesen Zweck kann man 'AVolCtl' auch verwenden. Meine
+persoenlichen Beduerfnisse waren, verschiedene Wege zu haben, wie die
+Regler der Soundkarte von der VDR-Lautstaerke abhaengen. Diese Wege
+(oder Profile) nenne ich 'Soundsets'.
+
+Ein Soundset fuer 'normales' Stereo unterscheidet sich von einem Dolby
+Digital Soundset, sprich, andere Soundkarten-Regler bewegen sich, wenn
+VDR die Lautstaerke aendert.
+
+Mit 'sndctl' lassen sich beliebig viele Soundsets anlegen, zwischen denen
+aus dem VDR-Menue umgeschaltet werden kann.
+
+
+ VORAUSSETZUNGEN
+===============================
+VDR ab Version 1.4.1
+ALSA 1.0.x
+
+ ENTWICKLUNGSUMGEBUNG
+-------------------------------
+Linux 2.6.8.1 (LFS 6.0)
+VDR 1.5.1
+ALSA-Lib 1.0.10
+g++ (GCC) 3.4.1
+
+ KOMPILIERT UND GETESTET
+-------------------------------
+VDR 1.4.1
+VDR 1.4.6
+VDR 1.5.0
+VDR 1.5.1
+VDR 1.5.2
+
+
+ BEDIENUNG
+===============================
+Das Umschalten zwischen den einzelnen Soundsets erledigt man ueber den
+Eintrag im Hauptmenue. Das derzeit aktive Soundset ist gekennzeichnet.
+Mit 'Hoch' und 'Runter' waehlt man das gewuenschte Soundset, 'Ok' oder
+'Rot' aktiviert das Soundset (und beendet das Menue).
+
+Ein neues Soundset wird mit 'Blau' angelegt, ein bestehendes mit 'Gruen'
+veraendert und mit 'Gelb' geloescht.
+
+
+ KONFIGURATION
+===============================
+Die Konfiguration teilt sich in zwei Bereiche. Allgemeine Einstellungen finden
+sich wie ueblich im VDR Einstellungsmenue fuer Plugins. Die Konfiguration
+der Soundsets selbst erreicht man �ber den Hauptmenueeintrag.
+
+ ALLGEMEINE EINSTELLUNGEN
+-------------------------------
+"Eintrag im Hauptmenue verstecken"
+   Wenn auf 'ja' gesetzt, wird das Plugin im VDR-Hauptmenue nicht angezeigt.
+
+"Menue Name"
+   Unter diesem Namen taucht das Plugin im VDR-Hauptmenue auf.
+   (Ich bevorzuge es z.B., den Eintrag 'Sound Manager' zu nennen.)
+
+"Lautstaerke beim Start"
+       -1: Die VDR-Lautstaerke wird beim Start gesetzt
+   0..100: Statt der VDR-Lautstaerke wird diese Lautstaerke gesetzt. Das erste
+           Betaetigung der VDR-Lautstaerke stellt diese dann ein
+
+           Wozu ist das gut?
+           Wenn der VDR sich allein einschaltet (z.B. wegen anstehender
+           Aufnahme[n]) und (wie bei mir) sich die 5.1-Boxen gleich
+           dazuschalten, soll natuerlich der Ton ausgeschaltet bleiben.
+           Dazu koennte man den VDR auf eine Startlautstaerke von 0 stellen.
+           Wenn man den VDR aber manuell einschaltet und fernsehen moechte,
+           muss man jetzt die Lautstaerke erst bis auf ein 'normales' Mass
+           regeln.
+  Loesung: Ist der Startwert des Plugins auf 0 gesetzt, ergibt sich der
+           Effekt eines stumm startenden VDR, der aber bei der ersten
+           Lautstaerkenbetaetigung sofort auf die VDR-Lautstaerke geht.
+
+"Standard Soundset"
+   Dieses Soundset wird beim Start des Plugins aktiviert.
+   Sollte die Dolby Digital Automatik eingeschaltet sein, ist das auch das
+   Soundset, auf das geschaltet wird, wenn ein Nicht-Dolby-Digital-Audio-Kanal
+   gewaehlt wird.
+
+"DD Automatik"
+   Wenn aktiv, versucht das Plugin zu erkennen, ob der Audio-Kanal auf
+   Dolby Digital geschaltet wird und ein entsprechendes Soundset aktivieren.
+
+"DD Automatik Soundset",
+   siehe vorher ... Dieses Soundset wird im Falle eines erkannten Dolby
+   Digital Kanals benutzt.
+
+"Soundflash aktivieren"
+   Aktiviert die 'Soundflash'-Funktion.
+   Wenn unmittelbar hintereinander die Lautstaerke hoch und wieder herunter
+   geregelt wird, setzt das Plugin die Lautstaerke kurz sehr laut und gleich
+   wieder auf den Normalwert.
+   Wozu ist das gut?
+   Eine evt. an den Ausgaengen der Soundkarte haengende Geraetschaft mag eine
+   automatische Standbyfunktion haben; sie schaltet sich bei allzu leisen
+   Lautstaerken aus. Man muss dann die Lautstaerke soweit erhoehen, dass sich
+   alles wieder einschaltet und wieder heruntersetzen, falls man es so laut gar
+   nicht wollte.
+   Loesung: Soundflash -> Lautstaerke kurz hoch und wieder runter und durch
+            die ebenso kurze Lautstaerkenerhoehung schaltet sich das Equipment
+            wieder ein. Die kurzzeitige hohe Lautstaerke ist nicht zu hoeren;
+            bis die externe Technik soweit ist, ist die Lautstaerke laengst
+            wieder normal.
+
+"Stumm beim Beenden"
+   Schaltet beim Beenden des VDR auf stumm.
+
+
+ SOUNDSET EINSTELLUNGEN
+-------------------------------
+"Name"
+   Der Name des Soundsets.
+
+Alle weiteren Parameter sind die Namen der einzelnen Regler der Soundkarte.
+(Nicht alle, sondern nur 'sinnvolle').
+Jeder Regler hat einen zugeordneten Wert, welcher festlegt, was mit ihm getan
+wird, wenn sich die VDR-Lautstaerke aendert.
+
+Der Aufbau dieses Wertes ist immer gleich und muss STRIKT eingehalten werden.
+
+ Operand (bestimmt, die Rechenoperation)
+ |
+ |   Minimum (der Regler geht nicht unter diesen Wert)
+ |   |
+ =80;1;90
+  |    |
+  |    Maximum (der Regler geht nicht ueber diesen Wert)
+  |
+  Wert (VDR-Lautstaerke wird per Operand mit diesem Wert verknuepft)
+
+Bis auf den Operand koennen die anderen Werte u.U. wegfallen.
+Ein paar Beispiele, die das Verfahren demonstrieren:
+"~"
+   tut gar nichts, der Regler wird nicht 'angefasst'
+   (Standardwert fuer alle Regler in einem neuen Soundset)
+
+"=0"
+   setzt den Regler dauerhaft auf den angegebenen Wert (hier 0)
+   (bei mir z.B. Bass =40 / Treble =60)
+
+"+10"
+   addiert den Wert (hier 10) zur VDR-Lautstaerke hinzu
+   (z.B. folgt "+0" der VDR-Lautstaerke direkt)
+
+"-5"
+   subtrahiert den Wert (hier 5) von der VDR-Lautstaerke
+
+"%10"
+   der Reglerwert ist immer 10% von der VDR-Lautstaerke
+
+"+10;1"
+   plus 10, aber nie weniger als 1
+   Wozu dies?
+   Der 'LFE' Regler meiner Soundkarte, der den Subwoofer bedient, ist mit nur
+   32 Stufen nicht so fein aufgeloest, was zur Folge hat, dass die Hardware bei
+   kleinen Werten den Regler schon mal ganz auf 0 zieht, obwohl vielleicht 5%
+   gemeint waren. Die Minimum-Einstellung verhindert das.
+
+
+ SVDR
+===============================
+Das Plugin stellt die folgenden SVDR Kommandos zur Verfuegung.
+
+SSET [ name ]
+   setzt oder zeigt das aktive Soundset (mittels Name)
+
+SSID [ id ]
+   setzt oder zeigt das aktive Soundset (mittels ID)
+
+LIST [ names | all ]
+   zeigt ohne Parameter eine Liste der ID's aller Soundsets,
+   mit 'names' eine Namensliste und mit 'all' eine Liste mit
+   ID und Name
+
+ BEISPIELE
+-------------------------------
+svdrpsend.pl plug sndctl list
+svdrpsend.pl plug sndctl list all
+svdrpsend.pl plug sndctl sset
+svdrpsend.pl plug sndctl sset Stereo
+
+
+
+ HINWEISE
+===============================
+- das Plugin rechnet stets mit Lautstaerken von 0 bis 100
+- wenn die VDR-Lautstaerke auf 0 geht, gelten keine Minimum-Werte mehr, der
+  Regler wird dann auch auf 0 gezogen
+- die folgenden Operationen (erstes Zeichen) sind moeglich:
+  '~' > gar nichts tun (so ein Regler wird aus den Parametern entfernt)
+  '=' > Regler wird immer auf denselben Wert gesetzt
+        (gut fuer 'Bass' und 'Treble' oder um einen Regler "still"zulegen)
+  '+' > Regler bekommt die VDR Lautstaerke erhoeht um diesen Wert
+  '-' > Regler bekommt die VDR Lautstaerke abzueglich dieses Wertes
+  '%' > Regler bekommt x Prozent vom VDR Lautstaerke-Wert
+- falls dein VDR nicht mit root-Rechten laeuft, benoetigt der VDR user Rechte
+  fuer den Zugriff auf den Mixer der Soundkarte; evt. muss der VDR user
+  Mitglied der Gruppe 'audio' oder 'video' sein
+

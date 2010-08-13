@@ -1,0 +1,19 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Thomas Hildebrandt <toxym@web.de>
+Project's homepage:          none
+Latest version available at: http://www.box.net/shared/qhu44kgcv4
+
+See the file COPYING for license information.
+
+---------------------------------------------------------------------------
+Sound control plugin - 'sndctl'
+---------------------------------------------------------------------------
+
+ TODO
+===============================
+
+- service for other plugins to handle sound set switching
+- maybe a rule system for automatic sound set switching
+  (if DD automatic is not smart enough)
+- maybe support for OSS (if this makes sense)

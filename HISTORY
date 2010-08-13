@@ -1,0 +1,33 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Thomas Hildebrandt <toxym@web.de>
+Project's homepage:          none
+Latest version available at: http://www.box.net/shared/qhu44kgcv4
+
+See the file COPYING for license information.
+
+---------------------------------------------------------------------------
+Sound control plugin - 'sndctl'
+---------------------------------------------------------------------------
+
+ HISTORY
+===============================
+
+2007-05-16: version 0.1.3
+- bug in sound set editing fixed (crash when editing twice)
+
+2007-04-22: version 0.1.2
+- Sound flash implemented
+- bugfixing (in sound set editing)
+
+2007-04-20: version 0.1.1
+- bugfixing in SVDR handling
+
+2007-04-19: version 0.1.0
+- creating, editing and deleting of sound sets from VDR menu implemented
+- Dolby digital auto switch implemented
+- SVDR commands implemented
+- initial volume implemented
+
+2007-03-14: version 0.0.1
+- Initial revision

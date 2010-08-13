@@ -1,0 +1,213 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Thomas Hildebrandt <toxym@web.de>
+Further development:         Rainer Blicke <rblickle@gmx.de>
+Project's homepage:          none
+Latest version available at: http://www.box.net/shared/qhu44kgcv4
+
+See the file COPYING for license information.
+
+---------------------------------------------------------------------------
+Sound control plugin - 'sndctl'
+---------------------------------------------------------------------------
+
+ MOTIVATION
+===============================
+This plugin was inspired and reengineered from the AVolCtl-Plugin by Martin
+Prochnow (thanks for it).
+It's used to control the volume levels of different controls of your sound-
+card according to the volume settings of VDR.
+
+So far so good, you can use 'AVolCtl' for this purpose, too. My personal
+needs are to have different ways, how the soundcard controls depends from
+the VDR volume settings. This ways (or profiles) are named 'sound sets'.
+
+A sound set for 'normal' stereo sound is different from a dolby digital
+sound set, means, other soundcard controls have to be moved, when changing
+the VDR volume.
+
+With 'sndctl' you can define as many sound sets as you want and switch
+between it from the VDR menu.
+
+
+ PREREQUISITES
+===============================
+VDR version 1.4.1 or higher
+ALSA 1.0.x
+
+ DEVELOPMENT ENVIRONMENT
+-------------------------------
+Linux 2.6.8.1 (LFS 6.0)
+VDR 1.5.1
+ALSA-Lib 1.0.10
+g++ (GCC) 3.4.1
+
+ COMPILATION AND RUNNING TESTED
+-------------------------------
+VDR 1.4.1
+VDR 1.4.6
+VDR 1.5.0
+VDR 1.5.1
+VDR 1.5.2
+
+
+ HANDLING
+===============================
+The switching between the several sound sets is done in the main menu entry.
+The currently activated sound set is marked. Select a sound set with 'Up' and
+'Down' and confirm with 'Ok' or 'Red' (menu disappears with this selection).
+
+A new sound set can be created with 'Blue', edited with 'Green' and deleted
+with 'Yellow'.
+
+
+ CONFIGURATION
+===============================
+Configuration is divided into two parts. General settings can be found as
+usual in the plugin configuration menu of VDR. The sound set configuration
+takes place in the main menu entry.
+
+ GENERAL SETTINGS
+-------------------------------
+"Hide main menu entry"
+   when set to 'yes', no plugin entry is shown in VDR main menu
+
+"Menu name"
+   The plugin entry in the VDR main menu gets this name
+   (I like to name it for instance 'Sound Manager'.)
+
+"Initial volume"
+       -1: VDR volume is set when starting
+   0..100: This value is the initial volume instead of the VDR volume. The
+           first VDR volume change synchronizes the plugin volume with the
+           VDR volume.
+
+           Why this?
+           When VDR does an automatic boot up (e.g. for making some
+           recordings) and thats why (like my case) the 5.1 system goes up,
+           too, VDR of course should be muted.
+           For this, we could give VDR an initial volume of 0. But when I
+           decide to switch my VDR on to look TV, I have to give it a 'normal'
+           volume manually.
+ Solution: Give 'sndctl' an initial volume of 0. This causes VDR to start
+           muted, but one volume key hit results in initial VDR volume.
+
+"Default sound set"
+   This sound set gets activated when starting.
+   In addition, this is the sound set to switch to, when the Dolby Digital
+   auto switcher detects a non-DD stream.
+
+"Auto switch for DD"
+   When active, the plugin tries to detect the switching to a Dolby Digital
+   audio channel and activates the appropriate sound set.
+
+"Auto switch sound set",
+   see before ... This sound set is used for the Dolby Digital switching.
+
+"Enable sound flash"
+   Activates the 'sound flash' function.
+   If the volume goes up and down within a short time, the plugin changes the
+   volume to very loud but immediately back to the normal value.
+   Why this?
+   You may use some devices with an automatic standby connected to your
+   soundcard. It may decide to go into sleep when your volume is low. Now you
+   have to go up with your volume to switch on your external equipment and, of
+   course, go back, if you don't want to hear it so loud.
+   Solution: Sound flash -> Change volume up and down fast and with the short
+             volume increasing your external technic is back online. You can't
+             hear the 'sound flash' itself; until the external devices are
+             ready, the volume was changed back to normal.
+
+"Mute on end"
+   Mutes volume, when VDR quits.
+
+
+ SOUND SET SETTINGS
+-------------------------------
+"name"
+   The name of the sound set.
+
+All of the following parameters are names for the soundcard controls.
+(Well, not for all, but for 'senseful' ones.)
+Every control owns a certain value, which causes a certain behaviour.
+
+The value syntax is always the same and is STRICTLY to made as descripted.
+
+ operation
+ |
+ |   minimum (the control will not go lesser than this)
+ |   |
+ =80;1;90
+  |    |
+  |    maximum (the control will not go over this value)
+  |
+  value (VDR volume and operation results in control volume)
+
+The operation is mandatory, all other values may not be important.
+See some examples for demonstration:
+"~"
+   does nothing, the control will not be 'touched'
+   (default value for all controls in a new sound set)
+
+"=0"
+   set the control fixed to the value (here 0)
+   (on my system e.g. Bass =40 / Treble =60)
+
+"+10"
+   adds the value to VDR volume
+   (e.g. "+0" follows VDR voluem directly)
+
+"-5"
+   subtracts the value (here 5) from VDR volume
+
+"%10"
+   control value is always 10% of VDR volume
+
+"+10;1"
+   plus 10, but never less than 1
+   Why this?
+   The 'LFE' control of my soundcard (which controls the subwoofer) has only
+   32 steps. This causes the hardware on little volume values sometimes to
+   go completely to 0, when real volume is 5% (or similar). This minimum value
+   prevents from this.
+
+
+ SVDR
+===============================
+THe following SVDR commands will be provided.
+
+SSET [ name ]
+   set or show the active sound set (by name)
+
+SSID [ id ]
+   set or show the active sound set (by ID)
+
+LIST [ names | all ]
+   without parameter shows a list of the ID's of all sound sets,
+   with 'names' a list with sound set names and with all a list
+   with both, ID and name
+
+ EXAMPLES
+-------------------------------
+svdrpsend.pl plug sndctl list
+svdrpsend.pl plug sndctl list all
+svdrpsend.pl plug sndctl sset
+svdrpsend.pl plug sndctl sset Stereo
+
+
+ HINT
+===============================
+- the plugin calculates volumes from 0 to 100
+- if volume goes to 0, no minimum value will be used, the control goes to 0
+- the following operation modes (first character) are valid:
+  '~' > do nothing (a control with this setting will be removed from the
+        setup values)
+  '=' > set this control always to the same level
+        (nice for 'Bass' and 'Treble' or control muting)
+  '+' > increase the VDR volume with this value
+  '-' > decrease the VDR volume with this value
+  '%' > set volume level to x percent of the VDR volume
+- if VDR on your system doesn't run as root, the VDR user needs permissions
+  to access the soundcard mixer device; maybe you need to put the VDR user
+  to the group 'audio' or 'video'
+
