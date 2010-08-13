@@ -1,0 +1,207 @@
+sndctl.o: sndctl.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h sndctl.h setup.h soundman.h alsa.h \
+ mixer.h soundset.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h mainmenu.h \
+ setupmenu.h
+alsa.o: alsa.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h alsa.h mixer.h
+i18n.o: i18n.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h
+mainmenu.o: mainmenu.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h mainmenu.h soundset.h sndctl.h \
+ setup.h soundman.h alsa.h mixer.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h soundsetmenu.h \
+ menuitems.h
+menuitems.o: menuitems.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h menuitems.h mixer.h soundman.h \
+ alsa.h sndctl.h setup.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h soundset.h
+mixer.o: mixer.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h mixer.h soundset.h sndctl.h \
+ setup.h soundman.h alsa.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h
+setup.o: setup.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h setup.h sndctl.h soundman.h alsa.h \
+ mixer.h soundset.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h
+setupmenu.o: setupmenu.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h setupmenu.h menuitems.h mixer.h \
+ sndctl.h setup.h soundman.h alsa.h soundset.h status.h \
+ ../../../include/vdr/status.h ../../../include/vdr/device.h \
+ ../../../include/vdr/ci.h ../../../include/vdr/dvbsubtitle.h \
+ ../../../include/vdr/eit.h ../../../include/vdr/filter.h \
+ ../../../include/vdr/nit.h ../../../include/vdr/pat.h \
+ ../../../include/vdr/ringbuffer.h ../../../include/vdr/sdt.h \
+ ../../../include/vdr/sections.h ../../../include/vdr/spu.h \
+ ../../../include/vdr/player.h
+soundman.o: soundman.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h soundman.h alsa.h mixer.h sndctl.h \
+ setup.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h soundset.h
+soundset.o: soundset.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h soundset.h sndctl.h setup.h \
+ soundman.h alsa.h mixer.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h
+soundsetmenu.o: soundsetmenu.c defaults.h \
+ ../../../include/vdr/interface.h ../../../include/vdr/config.h \
+ ../../../include/vdr/i18n.h ../../../include/vdr/tools.h \
+ ../../../include/vdr/font.h ../../../include/vdr/remote.h \
+ ../../../include/vdr/keys.h ../../../include/vdr/thread.h \
+ ../../../include/vdr/skins.h ../../../include/vdr/channels.h \
+ ../../../include/vdr/sources.h ../../../include/vdr/epg.h \
+ ../../../include/vdr/osd.h ../../../include/vdr/recording.h \
+ ../../../include/vdr/timers.h ../../../include/vdr/themes.h \
+ ../../../include/vdr/svdrp.h ../../../include/vdr/plugin.h \
+ ../../../include/vdr/menuitems.h ../../../include/vdr/osdbase.h i18n.h \
+ soundsetmenu.h menuitems.h mixer.h soundset.h sndctl.h setup.h \
+ soundman.h alsa.h status.h ../../../include/vdr/status.h \
+ ../../../include/vdr/device.h ../../../include/vdr/ci.h \
+ ../../../include/vdr/dvbsubtitle.h ../../../include/vdr/eit.h \
+ ../../../include/vdr/filter.h ../../../include/vdr/nit.h \
+ ../../../include/vdr/pat.h ../../../include/vdr/ringbuffer.h \
+ ../../../include/vdr/sdt.h ../../../include/vdr/sections.h \
+ ../../../include/vdr/spu.h ../../../include/vdr/player.h
+status.o: status.c defaults.h ../../../include/vdr/interface.h \
+ ../../../include/vdr/config.h ../../../include/vdr/i18n.h \
+ ../../../include/vdr/tools.h ../../../include/vdr/font.h \
+ ../../../include/vdr/remote.h ../../../include/vdr/keys.h \
+ ../../../include/vdr/thread.h ../../../include/vdr/skins.h \
+ ../../../include/vdr/channels.h ../../../include/vdr/sources.h \
+ ../../../include/vdr/epg.h ../../../include/vdr/osd.h \
+ ../../../include/vdr/recording.h ../../../include/vdr/timers.h \
+ ../../../include/vdr/themes.h ../../../include/vdr/svdrp.h \
+ ../../../include/vdr/plugin.h ../../../include/vdr/menuitems.h \
+ ../../../include/vdr/osdbase.h i18n.h status.h \
+ ../../../include/vdr/status.h ../../../include/vdr/device.h \
+ ../../../include/vdr/ci.h ../../../include/vdr/dvbsubtitle.h \
+ ../../../include/vdr/eit.h ../../../include/vdr/filter.h \
+ ../../../include/vdr/nit.h ../../../include/vdr/pat.h \
+ ../../../include/vdr/ringbuffer.h ../../../include/vdr/sdt.h \
+ ../../../include/vdr/sections.h ../../../include/vdr/spu.h \
+ ../../../include/vdr/player.h soundman.h alsa.h mixer.h sndctl.h setup.h \
+ soundset.h

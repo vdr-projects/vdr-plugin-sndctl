@@ -126,7 +126,7 @@ static char* copyMixerControl(string controlString) {
  * constructor
  */
 cSoundSetControlItem::cSoundSetControlItem( cSoundSet *SoundSet, cControlId Control, bool IsActive )
-:cMenuEditStrItem( Control.getDisplayName().c_str(), copyMixerControl( SoundSet->Get( Control )), 11, "~=+-%0123456789;" ){
+:cMenuEditStrItem( Control.getDisplayName().c_str(), value=copyMixerControl( SoundSet->Get( Control )), 11, "~=+-%0123456789;" ){
   // save arguments
   soundset = SoundSet;
   control = Control;

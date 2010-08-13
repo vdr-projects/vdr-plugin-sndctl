@@ -14,7 +14,7 @@
 #include "mainmenu.h"
 #include "setupmenu.h"
 
-static const char *VERSION         = "0.1.5";
+static const char *VERSION         = "0.1.5-1";
 static const char *DESCRIPTION     = "ALSA mixer control";
 static const char *SVDRHelpPages[] = {
   "SSET [ sound set name ]\n"

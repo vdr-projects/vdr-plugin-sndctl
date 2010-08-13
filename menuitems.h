@@ -62,6 +62,7 @@ class cSoundSetControlItem:public cMenuEditStrItem {
     cControlId control;
     bool       isActive;
     cSoundSet *soundset;
+    char      *value;
 
   public:
     cSoundSetControlItem( cSoundSet*, cControlId Control, bool );
